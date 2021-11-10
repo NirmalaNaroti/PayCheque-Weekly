@@ -37,7 +37,7 @@ public class MainDto {
         String date = yesturday.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         LocalDate lastWeekDay=lastWeek;
         String lastWeekdate = lastWeekDay.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        return date+ " and "+lastWeekdate;
+        return lastWeekdate + " To "+date;
 
     }
 
