@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <style>
+
+     table,
+    th,
+    td {
+
+       font-family:'Century Gothic',CenturyGothic,AppleGothic,sans-serif;
+           text-align: center;
+           border: 1px solid black;
+           border-collapse: collapse;
+           white-space: nowrap;
+
+    }
+
+    </style>
+</head>
+<body>
+
+
+<table>
+
+<tr  style="background-color:#FFD897; font-size:14px; padding: 9px 8px 9px 8px;">
+    <th  colspan="6" style="width:70px">Factoring And LRD Daily Return Cheques Report Dated : <span th:text="${mainDto.subDate1()}"> </span></th>
+
+</tr>
+
+    <tr style="background-color:#b6cff2; font-size:14px; padding: 9px 8px 9px 8px;">
+        <th style="width:70px">SL No</th>
+        <th style="width:200px">Account Number</th>
+        <th style="width:190px">Account Currency</th>
+        <th style="width:170px">Account Class</th>
+        <th style="width:200px">Account Title</th>
+
+        <th style="width:170px">Total return Cheques</th>
+
+    </tr>
+
+    <div th:each="srDto : ${ mainDto.getMaptoset() }">
+        <tr style="font-size:12px;">
+
+
+
+            <td th:text="${mainDto.serialNum()}">---</td>
+            <td th:text="${mainDto.isNullOrEmpty(mainDto.getPayCheque(srDto).getAccountNumber())}">---</td>
+            <td th:text="${mainDto.isNullOrEmpty(mainDto.getPayCheque(srDto).getAccountCurrency())}">---</td>
+            <td th:text="${mainDto.isNullOrEmpty(mainDto.getPayCheque(srDto).getAccountClass())}">---</td>
+            <td th:text="${mainDto.isNullOrEmpty(mainDto.getPayCheque(srDto).getAccountTitle())}">---</td>
+
+            <td th:text="${mainDto.intToString(mainDto.getPayCheque(srDto).getCount())}">---</td>
+
+
+
+
+
+        </tr>
+
+
+    </div>
+
+
+
+</table>
+
+<p></p>
+<p></p>
+
+
+
+
+
+</body>
+</html>
