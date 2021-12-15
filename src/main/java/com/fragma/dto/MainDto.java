@@ -24,6 +24,7 @@ public class MainDto {
         return todayDate;
     }
 
+
     public String subDate(){
         LocalDate yesturday=todayDate;
         String date = yesturday.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
@@ -100,6 +101,8 @@ public class MainDto {
 
 
     public void populateData(int SLNo,String account_number,String rm_name,String account_currency,String account_class,String account_title, String trans_date,String trn_ref_no,String checker_id,String return_cheque_no,String return_cheque_amount,String return_reason,String narration) {
+
+        LOG.info(" In method populateData");
 
         PayCheque payCheque = map.get(SLNo);
 
